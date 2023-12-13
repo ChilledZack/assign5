@@ -1,0 +1,24 @@
+add_character():
+ text = entry.get()
+ new_character = entry_char.get()
+ text += new_character label_var.set
+(text) def delete_character():
+ text = entry.get()
+ if text:
+ text = text[:-1]
+ label_var.set(text)
+ # Create main window root
+ = tk.Tk()
+ root.title("String Manipulator")
+ # String variable for label
+ label_var = tk.StringVar()
+ # Entry for input
+ entry_char = tk.Entry(root, width=5)
+ entry_char.pack(pady=10)
+ # Buttons for manipulation
+ add_button = tk.Button(root, text="Add Character",command=add_character)
+ add_button.pack(pady=5)
+ delete_button = tk.Button(root, text="Delete Character", command=delete_character) delete_button.pack(pady=5)
+ # Label to display manipulated string
+ label = tk.Label(root, textvariable=label_var, font=("Helvetica", 14))
+ label.pack(pady=10) # Start the Tkinter event loop root.mainloop()
